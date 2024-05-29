@@ -1,0 +1,471 @@
+[
+  {
+    "name": {
+      "DE": "Normal",
+      "EN": "Normal",
+      "ES": "Normal",
+      "FR": "Normal",
+      "IT": "Normale",
+      "JA": "ノーマル",
+      "KO": "노말",
+      "ZH-CN": "一般",
+      "ZH-TW": "一般"
+    },
+    "slug": "normal",
+    "immune_against": [
+      "ghost"
+    ],
+    "weak_against": [
+      "rock",
+      "steel"
+    ],
+    "strong_against": []
+  },
+  {
+    "name": {
+      "DE": "Feuer",
+      "EN": "Fire",
+      "ES": "Fuego",
+      "FR": "Feu",
+      "IT": "Fuoco",
+      "JA": "ほのお",
+      "KO": "불꽃",
+      "ZH-CN": "火",
+      "ZH-TW": "火"
+    },
+    "slug": "fire",
+    "immune_against": [],
+    "weak_against": [
+      "fire",
+      "water",
+      "rock",
+      "dragon"
+    ],
+    "strong_against": [
+      "grass",
+      "ice",
+      "bug",
+      "steel"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Wasser",
+      "EN": "Water",
+      "ES": "Agua",
+      "FR": "Eau",
+      "IT": "Acqua",
+      "JA": "みず",
+      "KO": "물",
+      "ZH-CN": "水",
+      "ZH-TW": "水"
+    },
+    "slug": "water",
+    "immune_against": [],
+    "weak_against": [
+      "water",
+      "grass",
+      "dragon"
+    ],
+    "strong_against": [
+      "fire",
+      "ground",
+      "rock"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Elektro",
+      "EN": "Electric",
+      "ES": "Eléctrico",
+      "FR": "Électrik",
+      "IT": "Elettro",
+      "JA": "でんき",
+      "KO": "전기",
+      "ZH-CN": "电",
+      "ZH-TW": "電"
+    },
+    "slug": "electric",
+    "immune_against": [
+      "ground"
+    ],
+    "weak_against": [
+      "electric",
+      "grass",
+      "dragon"
+    ],
+    "strong_against": [
+      "water",
+      "flying"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Pflanze",
+      "EN": "Grass",
+      "ES": "Planta",
+      "FR": "Plante",
+      "IT": "Erba",
+      "JA": "くさ",
+      "KO": "풀",
+      "ZH-CN": "草",
+      "ZH-TW": "草"
+    },
+    "slug": "grass",
+    "immune_against": [],
+    "weak_against": [
+      "fire",
+      "grass",
+      "poison",
+      "flying",
+      "bug",
+      "dragon",
+      "steel"
+    ],
+    "strong_against": [
+      "water",
+      "ground",
+      "rock"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Eis",
+      "EN": "Ice",
+      "ES": "Hielo",
+      "FR": "Glace",
+      "IT": "Ghiaccio",
+      "JA": "こおり",
+      "KO": "얼음",
+      "ZH-CN": "冰",
+      "ZH-TW": "冰"
+    },
+    "slug": "ice",
+    "immune_against": [],
+    "weak_against": [
+      "fire",
+      "water",
+      "ice",
+      "steel"
+    ],
+    "strong_against": [
+      "grass",
+      "ground",
+      "flying",
+      "dragon"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Kampf",
+      "EN": "Fighting",
+      "ES": "Lucha",
+      "FR": "Combat",
+      "IT": "Lotta",
+      "JA": "かくとう",
+      "KO": "격투",
+      "ZH-CN": "斗",
+      "ZH-TW": "鬥"
+    },
+    "slug": "fighting",
+    "immune_against": [
+      "ghost"
+    ],
+    "weak_against": [
+      "poison",
+      "flying",
+      "psychic",
+      "bug",
+      "fairy"
+    ],
+    "strong_against": [
+      "normal",
+      "ice",
+      "rock",
+      "dark",
+      "steel"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Gift",
+      "EN": "Poison",
+      "ES": "Veneno",
+      "FR": "Poison",
+      "IT": "Veleno",
+      "JA": "どく",
+      "KO": "독",
+      "ZH-CN": "毒",
+      "ZH-TW": "毒"
+    },
+    "slug": "poison",
+    "immune_against": [
+      "steel"
+    ],
+    "weak_against": [
+      "poison",
+      "ground",
+      "rock",
+      "ghost"
+    ],
+    "strong_against": [
+      "grass",
+      "fairy"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Boden",
+      "EN": "Ground",
+      "ES": "Tierra",
+      "FR": "Sol",
+      "IT": "Terra",
+      "JA": "じめん",
+      "KO": "땅",
+      "ZH-CN": "地面",
+      "ZH-TW": "地面"
+    },
+    "slug": "ground",
+    "immune_against": [
+      "flying"
+    ],
+    "weak_against": [
+      "grass",
+      "bug"
+    ],
+    "strong_against": [
+      "fire",
+      "electric",
+      "poison",
+      "rock",
+      "steel"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Flug",
+      "EN": "Flying",
+      "ES": "Volador",
+      "FR": "Vol",
+      "IT": "Volante",
+      "JA": "ひこう",
+      "KO": "비행",
+      "ZH-CN": "飞行",
+      "ZH-TW": "飛行"
+    },
+    "slug": "flying",
+    "immune_against": [],
+    "weak_against": [
+      "electric",
+      "rock",
+      "steel"
+    ],
+    "strong_against": [
+      "grass",
+      "fighting",
+      "bug"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Psycho",
+      "EN": "Psychic",
+      "ES": "Psíquico",
+      "FR": "Psy",
+      "IT": "Psico",
+      "JA": "エスパー",
+      "KO": "에스퍼",
+      "ZH-CN": "超能力",
+      "ZH-TW": "超能力"
+    },
+    "slug": "psychic",
+    "immune_against": [
+      "dark"
+    ],
+    "weak_against": [
+      "psychic",
+      "steel"
+    ],
+    "strong_against": [
+      "fighting",
+      "poison"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Käfer",
+      "EN": "Bug",
+      "ES": "Bicho",
+      "FR": "Insecte",
+      "IT": "Coleottero",
+      "JA": "むし",
+      "KO": "벌레",
+      "ZH-CN": "虫",
+      "ZH-TW": "蟲"
+    },
+    "slug": "bug",
+    "immune_against": [],
+    "weak_against": [
+      "fire",
+      "fighting",
+      "poison",
+      "flying",
+      "ghost",
+      "steel",
+      "fairy"
+    ],
+    "strong_against": [
+      "grass",
+      "psychic",
+      "dark"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Gestein",
+      "EN": "Rock",
+      "ES": "Roca",
+      "FR": "Roche",
+      "IT": "Roccia",
+      "JA": "いわ",
+      "KO": "바위",
+      "ZH-CN": "岩石",
+      "ZH-TW": "岩石"
+    },
+    "slug": "rock",
+    "immune_against": [],
+    "weak_against": [
+      "fighting",
+      "ground",
+      "steel"
+    ],
+    "strong_against": [
+      "fire",
+      "ice",
+      "flying",
+      "bug"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Geist",
+      "EN": "Ghost",
+      "ES": "Fantasma",
+      "FR": "Spectre",
+      "IT": "Spettro",
+      "JA": "ゴースト",
+      "KO": "고스트",
+      "ZH-CN": "幽灵",
+      "ZH-TW": "幽靈"
+    },
+    "slug": "ghost",
+    "immune_against": [
+      "normal"
+    ],
+    "weak_against": [
+      "dark"
+    ],
+    "strong_against": [
+      "psychic",
+      "ghost"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Drache",
+      "EN": "Dragon",
+      "ES": "Dragón",
+      "FR": "Dragon",
+      "IT": "Drago",
+      "JA": "ドラゴン",
+      "KO": "드래곤",
+      "ZH-CN": "龙",
+      "ZH-TW": "龍"
+    },
+    "slug": "dragon",
+    "immune_against": [
+      "fairy"
+    ],
+    "weak_against": [
+      "steel"
+    ],
+    "strong_against": [
+      "dragon"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Unlicht",
+      "EN": "Dark",
+      "ES": "Siniestro",
+      "FR": "Ténèbres",
+      "IT": "Buio",
+      "JA": "あく",
+      "KO": "악",
+      "ZH-CN": "恶",
+      "ZH-TW": "惡"
+    },
+    "slug": "dark",
+    "immune_against": [],
+    "weak_against": [
+      "fighting",
+      "dark",
+      "fairy"
+    ],
+    "strong_against": [
+      "psychic",
+      "ghost"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Stahl",
+      "EN": "Steel",
+      "ES": "Acero",
+      "FR": "Acier",
+      "IT": "Acciaio",
+      "JA": "はがね",
+      "KO": "강철",
+      "ZH-CN": "钢",
+      "ZH-TW": "鋼"
+    },
+    "slug": "steel",
+    "immune_against": [],
+    "weak_against": [
+      "fire",
+      "water",
+      "electric",
+      "steel"
+    ],
+    "strong_against": [
+      "ice",
+      "rock",
+      "fairy"
+    ]
+  },
+  {
+    "name": {
+      "DE": "Fee",
+      "EN": "Fairy",
+      "ES": "Hada",
+      "FR": "Fée",
+      "IT": "Folletto",
+      "JA": "フェアリー",
+      "KO": "페어리",
+      "ZH-CN": "妖精",
+      "ZH-TW": "妖精"
+    },
+    "slug": "fairy",
+    "immune_against": [],
+    "weak_against": [
+      "fire",
+      "poison",
+      "steel"
+    ],
+    "strong_against": [
+      "fighting",
+      "dragon",
+      "dark"
+    ]
+  }
+]

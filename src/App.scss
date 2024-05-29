@@ -1,0 +1,430 @@
+#mute-btn {
+  position: fixed;
+  top: calc(var(--cell-size) / 4);
+  right: calc(var(--cell-size) / 4);
+  width: var(--cell-size);
+  height: var(--cell-size);
+  z-index: 100;
+  opacity: 0.8;
+  background-image: url('./ui/speaker.webp');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform .1s ease-in-out, opacity .1s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.muted {
+    background-image: url('./ui/muted_speaker.webp');
+  }
+}
+
+#board-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+#board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: .4rem;
+  -webkit-transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  transition: opacity .25s ease-in-out;
+
+  &.type-focus {
+    .type-cell:not(.focus) {
+      opacity: 0.5;
+    }
+
+    .cell:not(.focus) {
+      opacity: 0.5;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blank {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--type-cell-size);
+  height: var(--type-cell-size);
+
+  #sword {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+  }
+
+  #shield {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+  }
+
+  #pokeball {
+    display: none;
+    height: 80%;
+    width: 80%;
+  }
+}
+
+.type-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .4rem;
+  transition: padding .2s ease-in-out, border-bottom-left-radius .2s ease-in-out, border-bottom-right-radius .2s ease-in-out, border-top-right-radius .2s ease-in-out;
+
+  .type-color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 100rem;
+    padding: .4rem;
+    cursor: pointer;
+    color: var(--white);
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+
+    @each $type,
+    $color in (normal: var(--color-normal), fire: var(--color-fire), water: var(--color-water), electric: var(--color-electric), grass: var(--color-grass), ice: var(--color-ice), fighting: var(--color-fighting), poison: var(--color-poison), ground: var(--color-ground), flying: var(--color-flying), psychic: var(--color-psychic), bug: var(--color-bug), rock: var(--color-rock), ghost: var(--color-ghost), dragon: var(--color-dragon), dark: var(--color-dark), steel: var(--color-steel), fairy: var(--color-fairy)) {
+      &.#{$type} {
+        background-color: $color;
+      }
+    }
+  }
+
+  .type-icon {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .type-name {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100rem;
+    padding: .4rem;
+    cursor: pointer;
+    color: var(--white);
+  }
+
+  &.horizontal {
+    flex-direction: column;
+    height: var(--type-cell-size);
+    width: var(--cell-size);
+
+    .type-color {
+      flex-direction: column;
+    }
+
+    .type-name {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+
+    &.focus {
+      padding: 0;
+
+      .type-color {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .type-name {
+        display: flex;
+      }
+    }
+  }
+
+  &.vertical {
+    height: var(--cell-size);
+    width: var(--type-cell-size);
+
+    &.focus {
+      padding: 0;
+
+      .type-color {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .type-name {
+        display: flex;
+      }
+    }
+  }
+}
+
+.cell {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--cell-size);
+  width: var(--cell-size);
+  cursor: pointer;
+  border: .05rem solid #fefefe88;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+
+  .message {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0;
+    transform: translate(0, -100%);
+    pointer-events: none;
+    text-shadow: .2rem .2rem .8rem #00000088;
+    z-index: 10;
+  }
+
+  &.precisely-selected {
+    .message {
+      display: flex;
+    }
+  }
+
+  &.normal-damage {
+    background-color: var(--color-normal-damage);
+  }
+
+  &.super-effective {
+    background-color: var(--color-super-effective);
+
+    .message {
+      color: var(--text-super-effective-1);
+      animation:
+        text-moves-up 1s ease-out,
+        text-visible 1s ease-out,
+        super-effective-glow .3s ease-in-out infinite;
+    }
+  }
+
+  &.not-very-effective {
+    background-color: var(--color-not-very-effective);
+
+    .message {
+      color: var(--text-not-very-effective-1);
+      animation:
+        text-moves-up 2s,
+        text-visible 2s,
+        not-very-effective-glow 2s ease-in-out infinite;
+    }
+  }
+
+  &.immune {
+    background-color: var(--color-no-effect);
+
+    .message {
+      color: var(--text-no-effect);
+      animation:
+        text-moves-up 1.5s ease-in-out,
+        text-visible 1.5s ease-in-out;
+    }
+  }
+}
+
+@keyframes text-moves-up {
+  0% {
+    transform: translate(0, -10%);
+  }
+
+  100% {
+    transform: translate(0, -100%);
+  }
+}
+
+@keyframes text-visible {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes super-effective-glow {
+  0% {
+    color: var(--text-super-effective-1);
+  }
+
+  50% {
+    color: var(--text-super-effective-2);
+  }
+
+  100% {
+    color: var(--text-super-effective-1);
+  }
+}
+
+@keyframes not-very-effective-glow {
+  0% {
+    color: var(--text-not-very-effective-1);
+  }
+
+  50% {
+    color: var(--text-not-very-effective-2);
+  }
+
+  100% {
+    color: var(--text-not-very-effective-1);
+  }
+}
+
+@keyframes rotating-ball {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 920px),
+(max-height: 920px) {
+  :root {
+    --cell-size: 4.8rem;
+  }
+
+  #mute-btn {
+    top: calc(var(--cell-size) / 2 / 2);
+    right: calc(var(--cell-size) / 2 / 2);
+    height: calc(var(--cell-size) / 2);
+    width: calc(var(--cell-size) / 2);
+  }
+
+  #board-container {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #board {
+    position: relative;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+
+    &.type-focus {
+      .type-cell:not(.focus) {
+        opacity: 1;
+        filter: brightness(.5);
+      }
+
+      .cell:not(.focus) {
+        opacity: 1;
+        filter: brightness(.5);
+      }
+    }
+
+    .row {
+      margin: 0 auto;
+
+      &:first-child {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        left: 0;
+        background-color: var(--color-page);
+        z-index: 15;
+      }
+
+      .blank {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: var(--cell-size);
+        height: var(--cell-size);
+        background-color: var(--color-page);
+        box-shadow: 0 0 .4rem #00000088;
+        z-index: 20;
+
+        #sword,
+        #shield {
+          display: none;
+          justify-content: center;
+          align-items: center;
+          color: var(--white);
+        }
+
+        #pokeball {
+          display: flex;
+          animation: rotating-ball 16s ease-in-out infinite;
+          color: var(--white);
+        }
+      }
+
+      .type-cell {
+        padding: 0;
+        width: var(--cell-size);
+        height: var(--cell-size);
+        background-color: var(--color-page);
+        transition: none;
+
+        &.vertical {
+          position: -webkit-sticky;
+          position: sticky;
+          left: 0;
+          z-index: 10;
+        }
+
+        .type-color {
+          border-radius: 0;
+        }
+
+        &.focus {
+          .type-name {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
