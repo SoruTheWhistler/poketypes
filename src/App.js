@@ -19,7 +19,7 @@ function App() {
   const [audioNormalDamage] = useSound(require("./audio/normal_damage.mp3"), { volume });
 
   useEffect(() => {
-    if (window.innerWidth < 680 || window.innerHeight < 680) {
+    if (window.innerWidth < 800 || window.innerHeight < 800) {
       setMuted(true);
     }
   }, []);
