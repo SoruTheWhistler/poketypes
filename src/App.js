@@ -18,12 +18,6 @@ function App() {
   const [audioNotVeryEffective] = useSound(require("./audio/not_very_effective.mp3"), { volume });
   const [audioNormalDamage] = useSound(require("./audio/normal_damage.mp3"), { volume });
 
-  useEffect(() => {
-    if (window.innerWidth < 800 || window.innerHeight < 800) {
-      setMuted(true);
-    }
-  }, []);
-
   function handleClick(attacker, defender, attackerId, defenderId) {
     setSelectedTypes({
       attacker: attacker,
