@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/poketypes/static/css/main.fb48f7ac.css",
-    "main.js": "/poketypes/static/js/main.164f7191.js",
+    "main.js": "/poketypes/static/js/main.83e2a187.js",
     "static/js/885.c8f95fe4.chunk.js": "/poketypes/static/js/885.c8f95fe4.chunk.js",
     "static/media/super_effective.mp3": "/poketypes/static/media/super_effective.7d791e13362abf1c8773.mp3",
     "static/media/normal_damage.mp3": "/poketypes/static/media/normal_damage.02c2d827a8c159d513a3.mp3",
     "static/media/not_very_effective.mp3": "/poketypes/static/media/not_very_effective.e4e6eefa5aac780eee4d.mp3",
     "static/media/shield.webp": "/poketypes/static/media/shield.c01d3e612ea936107fa8.webp",
     "static/media/sword.webp": "/poketypes/static/media/sword.01ca03a5af07cd127bd4.webp",
+    "static/media/pokeball.webp": "/poketypes/static/media/pokeball.ed1eeb2b94dbb10fb5be.webp",
     "static/media/dragon.svg": "/poketypes/static/media/dragon.9d32757b191cbbaea8d4.svg",
-    "static/media/pokeball.webp": "/poketypes/static/media/pokeball.351ca1ebed3bde93e99e.webp",
     "static/media/fire.svg": "/poketypes/static/media/fire.e0bd7fcab2121e7ac1ff.svg",
     "static/media/psychic.svg": "/poketypes/static/media/psychic.67439878eaa68ee726de.svg",
     "static/media/fairy.svg": "/poketypes/static/media/fairy.767c2f5699eb5f1120f1.svg",
@@ -31,11 +31,11 @@
     "static/media/grass.svg": "/poketypes/static/media/grass.e09623e3345d5bf5286f.svg",
     "static/media/normal.svg": "/poketypes/static/media/normal.2ba66dd583ebf70eb414.svg",
     "main.fb48f7ac.css.map": "/poketypes/static/css/main.fb48f7ac.css.map",
-    "main.164f7191.js.map": "/poketypes/static/js/main.164f7191.js.map",
+    "main.83e2a187.js.map": "/poketypes/static/js/main.83e2a187.js.map",
     "885.c8f95fe4.chunk.js.map": "/poketypes/static/js/885.c8f95fe4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fb48f7ac.css",
-    "static/js/main.164f7191.js"
+    "static/js/main.83e2a187.js"
   ]
 }
